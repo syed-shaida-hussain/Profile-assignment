@@ -1,0 +1,133 @@
+.empty-cart-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.explore-btn{
+    background: #2370f4;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cart-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.cart-img{
+    max-width: 10rem;
+    box-shadow: 2px 2px 7px 2px #f1f5f9;
+}
+
+.item-details-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.quantity{
+    flex: 1;
+    align-items: center;
+    gap: 18px;
+}
+
+.update-btn{
+    background: #2370f4;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.remove-btn{
+    border : none;
+    background: #2370f4;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media only screen and (max-width : 900px) {
+    .flex{
+        flex: 2;
+    }
+}
+
+@media only screen and (max-width : 800px) {
+    .cart-card{
+        gap: 10px;
+        font-size: 14px;
+    }
+    
+    .cart-img{
+        max-width: 6rem;
+    }
+}
+
+@media only screen and (max-width : 650px) {
+    .flex{
+       flex-direction: column;
+       align-items: flex-start;
+       margin-left: 10px;
+    }
+
+    .flex-end{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-img{
+        max-width: 8rem;
+    }
+
+    .cart-card{
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width : 500px) {
+    .flex-end{
+        align-items: flex-end;
+    }
+    .cart-card{
+        font-size: 12px;
+    }
+    .remove-btn{
+        font-size: 12px;
+    }  
+    .quantity{
+        gap: 15px;
+    }
+}

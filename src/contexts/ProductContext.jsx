@@ -1,0 +1,33 @@
+/* eslint-disable react/prop-types */
+import { createContext , useContext, useReducer } from "react";
+
+const ProductContext = createContext();
+
+const initialProductState = {
+    products : [],
+    cart : []
+}
+
+const productReducer = (state , action) => {
+    switch(action.type) {
+        case "FETCH_PRODUCTS" :
+            return {...state, products:action.payload}
+        case "ADD_PRODUCT_TO_CART" :
+            return {...state , cart : [...state.cart , {...action.payload , quantity : 1}]}
+        case "REMOVE_CART_ITEM" :
+            return {...state , cart : state.cart.filter((item) => item.id !== action.payload)}
+        default :
+            return {...state}
+    }
+}
+
+const ProductProvider = ({children}) => {
+    const [productState , dispatchProduct] = useReducer( productReducer , initialProductState)
+    return <ProductContext.Provider value = {{productState, dispatchProduct}} >
+        {children}
+    </ProductContext.Provider>
+}
+
+const useProducts = () => useContext(ProductContext)
+
+export {ProductProvider , useProducts }

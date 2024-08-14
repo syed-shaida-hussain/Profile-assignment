@@ -1,0 +1,41 @@
+body,*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2370f4;
+    color: white;
+    padding: 20px;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.cart-icon-container{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-badge{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 80%;
+    left: 80%;
+    background: green;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 14px;
+    border-radius: 50%;
+}
