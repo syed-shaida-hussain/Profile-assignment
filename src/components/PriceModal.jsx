@@ -9,9 +9,9 @@ const PriceModal = () => {
     const totalCartPrice = Math.ceil(((90/ 100) * cartPrice))
 
     const handleCheckout = () => {
-        dispatchProduct({type: "CHECKOUT"})
         navigate("/checkout")
         toast.success("Checkout Succcessfull")
+        dispatchProduct({type: "CHECKOUT"})
     }
   return (
     <div className="price-modal flex-c">
