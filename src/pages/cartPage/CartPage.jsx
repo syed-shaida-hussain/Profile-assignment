@@ -9,7 +9,7 @@ const CartPage = () => {
   return (
     <main>
     {cart?.length > 0 ? (
-        <div className="cart-wrapper">
+        <div className="cart-wrapper flex-r">
             <section >
                 {cart?.map((product) => (
                     <CartCard key={product.id} product = {product}/>
@@ -18,7 +18,7 @@ const CartPage = () => {
             <PriceModal />
         </div>
     ) : (
-      <div className="empty-cart-message">
+      <div className="empty-cart-message flex-c flex-ctr-hr flex-ctr-vt">
         <h2 className="">Your cart is feeling lonely.</h2>
         <button className="explore-btn" onClick={() => navigate("/")}>
           Explore Products

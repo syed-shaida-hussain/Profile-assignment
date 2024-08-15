@@ -7,12 +7,12 @@ export const Header = () => {
   const {productState : {cart}} = useProducts();
   const navigate = useNavigate();
   return (
-    <header className="header">
+    <header className="header flex-r sp-bw flex-ctr-hr">
         <h2 className="logo" onClick={() => navigate("/")}>Fashionkart</h2>
-        <div className="cart-icon-container" onClick={() => navigate("/cart")}>
+        <div className="cart-icon-container flex-r flex-ctr-hr" onClick={() => navigate("/cart")}>
             Cart
             <FaShoppingCart />
-            <span className="cart-badge">{cart.length}</span>
+            <span className="cart-badge flex-r flex-ctr-hr flex-ctr-vt">{cart.length}</span>
         </div>
     </header>
   )

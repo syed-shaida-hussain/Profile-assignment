@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { toast } from "react-toastify";
 import { useProducts } from "../contexts/ProductContext";
 
 const CartCard = ({product}) => {
@@ -7,21 +8,24 @@ const CartCard = ({product}) => {
 
     const handleRemoveFromCart = (id) => {
         dispatchProduct({type : "REMOVE_CART_ITEM" , payload : id})
+        toast.success("Product removed from cart successfully")
     }
 
     const handleIncrementCart = (product) => {
         dispatchProduct({type : "INCREMENT_CART" , payload : product.id})
+        toast.success("Product quantity updated successfully")
     }
 
     const handleDecrementCart = (product) => {
         product.quantity <= 1 ? dispatchProduct({type : "REMOVE_CART_ITEM" , payload : id}) : dispatchProduct({type : "DECREMENT_CART" , payload : product.id})
+        toast.success("Product quantity updated successfully")
     }
 
   return (
-    <div key={id} className="cart-card">
+    <div key={id} className="cart-card flex-r">
     <div className="flex">
     <img src= {thumbnail} alt="cart-image" className="cart-img flex-center" />
-    <div className="item-details-wrapper">
+    <div className="item-details-wrapper flex-c">
         <h3 className="cart-product-name flex-center">{title}</h3>
         <div className="price flex-center">{price.toLocaleString('en-US', {style: 'currency',currency: 'INR'})}</div>
     </div>

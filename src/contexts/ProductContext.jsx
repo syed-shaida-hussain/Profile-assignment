@@ -20,6 +20,8 @@ const productReducer = (state , action) => {
             return {...state, cart: state.cart.map((product) => product.id === action.payload ? {...product, quantity: product.quantity + 1 } : product)}
         case "DECREMENT_CART" :
             return {...state, cart: state.cart.map((product) => product.id === action.payload ? {...product, quantity: product.quantity - 1 } : product)}
+        case "CHECKOUT" : 
+            return {...state , cart : []}
         default :
             return {...state}
     }
