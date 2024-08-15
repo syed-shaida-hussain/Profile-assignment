@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable-next-line react/prop-types */
+
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../contexts/ProductContext";
 

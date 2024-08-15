@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useProducts } from "../contexts/ProductContext";
 
-/* eslint-disable react/prop-types */
 const CartCard = ({product}) => {
     const {id, thumbnail, price, title, quantity} = product;
     const {dispatchProduct} = useProducts();
@@ -32,7 +32,7 @@ const CartCard = ({product}) => {
         {quantity}
         <button className="update-btn" onClick={() => handleIncrementCart(product)}>+</button>
     </div>
-    <button className="remove-btn" onClick={() => handleRemoveFromCart(id)} >Remove Item</button>
+    <button className="action-btn" onClick={() => handleRemoveFromCart(id)} >Remove Item</button>
     </div>
   </div>
   )
